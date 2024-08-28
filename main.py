@@ -19,7 +19,7 @@ item_service = ItemService(item_repository)
 
 
 class ItemList(HTTPEndpoint):
-    async def get(self, request):
+    async def get(self):
         """Get list of items"""
         items = await item_service.get_items()
         return JSONResponse([item.model_dump() for item in items])

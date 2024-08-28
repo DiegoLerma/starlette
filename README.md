@@ -15,17 +15,20 @@ El proyecto está organizado en los siguientes archivos principales:
 ## Instalación
 
 1. Clona el repositorio:
+
     ```bash
     git clone https://github.com/DiegoLerma/starlette.git
     cd starlette
     ```
 
 2. Instala las dependencias necesarias:
+
     ```bash
     pip install -r requirements.txt
     ```
 
 3. Asegúrate de que MongoDB esté instalado y ejecutándose en tu máquina, y que la dirección y puerto de MongoDB en `main.py` sean correctos:
+
     ```python
     client = AsyncIOMotorClient("mongodb://192.168.0.185:27017")
     ```
@@ -46,9 +49,10 @@ La aplicación estará disponible en `http://127.0.0.1:8000`.
 
 - **GET** `/items`
 - **Descripción**: Devuelve una lista de todos los `items` almacenados en la base de datos.
-- **Respuesta**: 
-    - Código 200: Una lista de `items` en formato JSON.
-    - Ejemplo de respuesta:
+- **Respuesta**:
+  - Código 200: Una lista de `items` en formato JSON.
+  - Ejemplo de respuesta:
+  
     ```json
     [
         {
@@ -71,6 +75,7 @@ La aplicación estará disponible en `http://127.0.0.1:8000`.
 - **POST** `/items`
 - **Descripción**: Crea un nuevo `item` en la base de datos.
 - **Cuerpo de la petición**:
+
     ```json
     {
         "name": "Item 3",
@@ -78,10 +83,13 @@ La aplicación estará disponible en `http://127.0.0.1:8000`.
         "price": 9.99
     }
     ```
-- **Respuesta**: 
-    - Código 200: ID del `item` creado.
-    - Ejemplo de respuesta:
+
+- **Respuesta**:
+  - Código 200: ID del `item` creado.
+  - Ejemplo de respuesta:
+  
     ```json
+
     {
         "id": "61b75e441ed1dc0d300a184c"
     }
