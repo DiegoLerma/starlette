@@ -2,6 +2,7 @@ from models import Item
 from repositories import ItemRepository
 from typing import List
 
+
 class ItemService:
     def __init__(self, repository: ItemRepository):
         self.repository = repository

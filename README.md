@@ -16,8 +16,8 @@ El proyecto está organizado en los siguientes archivos principales:
 
 1. Clona el repositorio:
     ```bash
-    git clone https://github.com/tuusuario/tu-repositorio.git
-    cd tu-repositorio
+    git clone https://github.com/DiegoLerma/starlette.git
+    cd starlette
     ```
 
 2. Instala las dependencias necesarias:

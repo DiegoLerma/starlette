@@ -22,7 +22,7 @@ class ItemList(HTTPEndpoint):
     async def get(self, request):
         """Get list of items"""
         items = await item_service.get_items()
-        return JSONResponse([item.dict() for item in items])
+        return JSONResponse([item.model_dump() for item in items])
 
     async def post(self, request):
         """Create a new item"""
@@ -35,7 +35,8 @@ class ItemList(HTTPEndpoint):
 # Rutas de la aplicación
 routes = [
     Route("/items", ItemList),
-    Route("/openapi.json", lambda request: JSONResponse(schema_generator.get_schema(routes))),
+    Route("/openapi.json",
+          lambda request: JSONResponse(schema_generator.get_schema(routes))),
     Route("/docs", lambda request: HTMLResponse(
         """
         <!DOCTYPE html>
