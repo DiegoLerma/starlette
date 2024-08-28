@@ -1,0 +1,5 @@
+starlette 
+motor 
+pydantic
+uvicorn
+pyyaml
